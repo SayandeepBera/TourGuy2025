@@ -1,0 +1,441 @@
+/* Signup and login form css */
+.form-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85.6vh;
+}
+
+.wrapper {
+  position: relative;
+  width: 830px;
+  height: 530px;
+  background: transparent;
+  border: 2px solid #0ef;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #0ef;
+}
+
+.wrapper .form-box {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper .form-box.login {
+  left: 0;
+  padding: 45px;
+}
+
+/* Left side login form animation */
+.wrapper .form-box.login .animation {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.wrapper.active .form-box.login .animation {
+  transform: translateX(-120%);
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.input-box input {
+  background: none;
+  outline: inset;
+  /* default outline color */
+  outline-color: #666;
+  width: 100%;
+  padding: 12px 50px 12px 20px;
+  border: none;
+  border-radius: 10px;
+  caret-color: white;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Outline color on focus */
+.input-box:focus-within input {
+  outline-color: #0ef;
+}
+
+/* Autofill fix */
+.input-box input:-webkit-autofill,
+.input-box input:-webkit-autofill:hover,
+.input-box input:-webkit-autofill:focus,
+.input-box input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #081b29 inset !important;
+  /* match background */
+  -webkit-text-fill-color: white !important;
+  /* force text white */
+  caret-color: white;
+  border-radius: 10px;
+  /* keep rounded corners */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.input-box .form-label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1.03rem;
+  color: white;
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+/* input box change on focus */
+.input-box:focus-within .form-label,
+.input-box input:valid~.form-label {
+  top: -28px;
+  color: #0ef;
+  transform: translateY(0);
+  font-size: 1.1rem;
+}
+
+/* Icon setup */
+.input-box svg {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+}
+
+/* Icon color change on focus */
+.input-box:focus-within svg {
+  color: #0ef;
+  transition: color 0.3s ease;
+}
+
+.form-btn {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.form-btn::before {
+  content: '';
+  position: absolute;
+  height: 300%;
+  width: 100%;
+  background: linear-gradient(#081b29, #0ef, #081b29, #0ef);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.form-btn:hover::before {
+  top: 0;
+}
+
+.social-icons .social-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 2px solid #0ef;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.social-icons .social-btn:hover {
+  color: #0ef;
+}
+
+/* right side style */
+.wrapper .info-text {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wrapper .info-text.login {
+  right: 0;
+  text-align: right;
+  padding: 45px;
+}
+
+/* Right side login text animation  */
+.wrapper .info-text.login .animation {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.wrapper.active .info-text.login .animation {
+  transform: translateX(150%);
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.wrapper .bg-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 900px;
+  height: 700px;
+  border-bottom: 2px solid #0ef;
+  background: linear-gradient(45deg, #081b29, #0ef);
+  transform: rotate(10deg) skewY(45deg);
+  transform-origin: bottom right;
+  transition: 1.5s ease;
+  transition-delay: 1.6s;
+  z-index: 1;
+}
+
+.wrapper.active .bg-animation {
+  transform: rotate(0deg) skewY(0deg);
+  transition-delay: 0.5s;
+}
+
+.form-btn.btn2 {
+  width: 80%;
+  border-radius: 42px;
+  height: 40px;
+  border: none;
+}
+
+.form-btn.btn2::before {
+  background: linear-gradient(#f42461, #fff000, #f42461, #fff000);
+}
+
+.wrapper .bg-animation2 {
+  position: absolute;
+  top: 100%;
+  left: 250px;
+  width: 850px;
+  height: 1000px;
+  border-bottom: 2px solid #0ef;
+  background: #081b29;
+  transform: rotate(0deg) skewY(0deg);
+  transform-origin: bottom left;
+  transition: 1.5s ease;
+  transition-delay: 0.5s;
+  z-index: 1;
+}
+
+.wrapper.active .bg-animation2 {
+  transform: rotate(-5deg) skewY(-55deg);
+  transition-delay: 1.2s;
+}
+
+/* Register style */
+.wrapper .form-box.register {
+  right: 0;
+  padding: 20px 45px;
+}
+
+/* Right side register form animation */
+.wrapper .form-box.register .animation {
+  transform: translateX(120%);
+  opacity: 0;
+  filter: blur(10px);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.wrapper.active .form-box.register .animation {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.wrapper.active .form-box.register {
+  z-index: 10;
+  /* bring the register form above */
+}
+
+.wrapper:not(.active) .form-box.login {
+  z-index: 10;
+  /* bring the login form above */
+}
+
+.wrapper .info-text.register {
+  left: 0;
+  text-align: left;
+  padding: 45px;
+}
+
+/* Left side register text animation */
+.wrapper .info-text.register .animation {
+  transform: translateX(-150%);
+  opacity: 0;
+  filter: blur(10px);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.wrapper.active .info-text.register .animation {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+
+  /* 1. Wrapper Adjustments: Make it fluid and tall */
+  .wrapper {
+    width: 95%;
+    height: auto;
+    min-height: 80vh;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0ef;
+    overflow: hidden;
+  }
+
+  /* 2. Form and Info-Text: Reset positioning and size */
+  .wrapper .form-box,
+  .wrapper .info-text {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 40px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  /* Reset specific text alignment for mobile */
+  .wrapper .info-text.login,
+  .wrapper .info-text.register {
+    text-align: center;
+    padding-bottom: 0;
+    margin-top: 6rem;
+  }
+
+  /* 3. Reorder for Register view */
+  /* When active (Register view), put the Register info block above the Register form */
+  .wrapper.active .info-text.register {
+    order: -2;
+  }
+
+  .wrapper.active .form-box.register {
+    padding-bottom: 6rem;
+    order: -1;
+  }
+
+  /* 4. Content Block Fixes (Translate Y adjustments are now obsolete) */
+  .wrapper .info-text>div {
+    transform: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 20px;
+  }
+
+  /* 5. Animation Reset: Crucial! Disable or simplify the complex animations */
+
+  /* Hide the opposite form/info panel by default */
+  .wrapper .form-box.login,
+  .wrapper .info-text.login,
+  .wrapper .form-box.register,
+  .wrapper .info-text.register {
+    display: none;
+    opacity: 0;
+    transform: none !important;
+    transition: none;
+    /* Disable animation for instant toggle */
+  }
+
+  /* Show only the relevant login parts by default (wrapper: not active) */
+  .wrapper:not(.active) .form-box.login,
+  .wrapper:not(.active) .info-text.login {
+    display: flex;
+    opacity: 1;
+    transition: none;
+  }
+
+  /* Show only the relevant register parts when active */
+  .wrapper.active .form-box.register,
+  .wrapper.active .info-text.register {
+    display: flex;
+    opacity: 1;
+    transition: none;
+  }
+
+  /* Hide complex background animations */
+  .wrapper .bg-animation,
+  .wrapper .bg-animation2 {
+    display: none;
+  }
+
+  /* Font size adjustment for better fit */
+  .wrapper h1 {
+    font-size: 2rem !important;
+  }
+
+  .wrapper h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .wrapper p,
+  .wrapper a,
+  .wrapper label {
+    font-size: 1rem !important;
+  }
+
+  /* Ensure input label animation still works */
+  .input-box:focus-within .form-label,
+  .input-box input:valid~.form-label {
+    top: -30px;
+    /* Adjust label lift-up height for mobile */
+    font-size: 0.9rem;
+  }
+
+  .form-btn.btn2 {
+    width: 100%;
+  }
+
+  .social-platform {
+    margin-top: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .wrapper .form-box,
+  .wrapper .info-text {
+    padding: 25px 15px;
+  }
+}

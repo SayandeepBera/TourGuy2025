@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* nav list below style */
+.nav-list {
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-list::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: red;
+    transition: width 0.5s ease;
+}
+
+.nav-list:hover::after,
+.nav-list.active::after {
+    width: 100%;
+}
+
+/* Hide the default calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* Destination background image */
+.dest-bg {
+    background-image: url('./Components//Images//dest_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+}
+
+/* for phone number */
+/* 1. The Container and Main Input */
+.dark-phone-input .react-tel-input .form-control {
+    background: #11182780 !important;
+    color: white !important;
+    border: 1px solid #374151 !important;
+}
+
+/* 2. The Selected Flag Box (The white area you mentioned) */
+.dark-phone-input .react-tel-input .flag-dropdown {
+    background-color: transparent !important;
+    border-right: none !important;
+    border-radius: 12px 0 0 12px !important;
+}
+
+.dark-phone-input .react-tel-input .selected-flag {
+    background-color: transparent !important;
+    border-radius: 12px 0 0 12px !important;
+}
+
+.custom-phone-input .flag-dropdown{
+    border: none !important;
+    padding-left: 10px !important;
+}
+
+/* 3. Dropdown Menu (The list of countries) */
+.dark-phone-input .react-tel-input .country-list {
+    background-color: #1A2437 !important;
+    color: white !important;
+    border: 1px solid #334155 !important;
+    border-radius: 12px !important;
+    margin-top: 5px !important;
+    width: 255px !important;
+}
+
+.dark-phone-input .react-tel-input .country-list .country:hover {
+    background-color: #00C4CC !important;
+    color: #0f172a !important;
+}
+
+.dark-phone-input .react-tel-input .country-list .country.highlight {
+    background-color: #00C4CC !important;
+    color: #0f172a !important;
+}
+
+/* 4. The Search Box inside the dropdown */
+.dark-phone-input .react-tel-input .search {
+    background-color: #0f172a !important;
+    padding: 10px !important;
+}
+
+.dark-phone-input .react-tel-input .search-box {
+    background-color: #111827 !important;
+    color: white !important;
+    border: 1px solid #374151 !important;
+    border-radius: 8px !important;
+    margin-left: 0 !important;
+    width: 90% !important;
+}
+
+/* 5. Tooltip/Arrow fix */
+.dark-phone-input .react-tel-input .selected-flag .arrow {
+    border-top: 4px solid #00C4CC !important;
+}
+
+.dark-phone-input .react-tel-input .selected-flag .arrow.up {
+    border-bottom: 4px solid #00C4CC !important;
+}
+
+
+/* Custom scrollbar for the internal form */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #00C4CC;
+}
+
+/* Custom scrollbar for emoji picker */
+.EmojiPickerReact {
+  --epr-bg-color: #0F172A;
+  --epr-category-label-bg-color: transparent;
+  --epr-text-color: #ffffff;
+  --epr-hover-bg-color: rgba(255, 255, 255, 0.08);
+  --epr-focus-bg-color: rgba(0, 196, 204, 0.2);
+  --epr-highlight-color: #00C4CC;
+
+  border-radius: 1rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+}
+
+/* Webkit Scrollbar (Chrome, Edge, Brave) */
+.EmojiPickerReact ::-webkit-scrollbar {
+  width: 5px;
+}
+
+.EmojiPickerReact ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.EmojiPickerReact ::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+.EmojiPickerReact ::-webkit-scrollbar-thumb:hover {
+  background: #00C4CC;
+}
+
+/* Firefox Support */
+.EmojiPickerReact {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+}
