@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import { useContext } from 'react';
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteSweep } from "react-icons/md";
@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import DeleteConfirmation from './DeleteConfirmation';
 import { BsInfoCircleFill } from "react-icons/bs";
 import AuthContext from '../Context/Authentication/AuthContext';
+import { motion, AnimatePresence, easeOut } from 'framer-motion';
 
 const DestinationCard = React.memo(({ destination, showDetails, openEditModal }) => {
     const { deleteDestination, deletingId } = useContext(DestinationsContext);
@@ -43,7 +44,7 @@ const DestinationCard = React.memo(({ destination, showDetails, openEditModal })
                 autoClose: false, // Wait for user action
                 closeOnClick: false,
                 draggable: false,
-                style: { width: '95vw',maxWidth: '550px', borderRadius: '15px', background: '#1e293b', color: '#fff', border: '1px solid #334155', borderBottom: '4px solid #707c7c', margin: '0 auto' }
+                style: { width: '95vw', maxWidth: '550px', borderRadius: '15px', background: '#1e293b', color: '#fff', border: '1px solid #334155', borderBottom: '4px solid #707c7c', margin: '0 auto' }
             }
         );
     }
@@ -69,7 +70,12 @@ const DestinationCard = React.memo(({ destination, showDetails, openEditModal })
     };
 
     return (
-        <div
+        <motion.div
+            key="card"
+            initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
             className={"relative destination-card bg-[#1A2437] rounded-2xl shadow-2xl overflow-visible hover:shadow-[#00C4CC]/30 transition duration-300 transform hover:scale-[1.02]"}
             onClick={() => showDetails(destination._id)}
         >
@@ -145,7 +151,7 @@ const DestinationCard = React.memo(({ destination, showDetails, openEditModal })
                     </button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 })
 
