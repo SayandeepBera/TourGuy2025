@@ -114,12 +114,30 @@ const Gallery = () => {
     return (
         <div className="py-16 md:py-18 lg:py-20 bg-[#0F172A] border-y border-gray-800 px-4">
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg-px-8">
-                <h2 className="text-[1.65rem] md:text-[2rem] lg:text-[2.45rem] font-extrabold text-white text-center mb-2">Cinematic Journeys: The <span className="text-[#00C4CC]">TourGuy</span> Gallery</h2>
-                <p className="text-base md:text-lg lg:text-xl text-gray-400 mb-12 md:mb-14 lg:mb-16 text-center max-w-3xl mx-auto">
+                <motion.h2
+                    initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ type: "spring", stiffness: 100, duration: 0.8 }}
+                    className="text-[1.65rem] md:text-[2rem] lg:text-[2.45rem] font-extrabold text-white text-center mb-2"
+                >
+                    Cinematic Journeys: The <span className="text-[#00C4CC]">TourGuy</span> Gallery
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.8, delay: 0.2 }}  
+                    className="text-base md:text-lg lg:text-xl text-gray-400 mb-12 md:mb-14 lg:mb-16 text-center max-w-3xl mx-auto"
+                >
                     A visual showcase of the unique moments unlocked by our verified guides.
-                </p>
+                </motion.p>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <motion.div
+                    key="gallery"
+                    initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.8, delay: 0.4 }} 
+                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
+                >
                     {galleryImg.map((cat, index) => (
                         <div key={index} className="rounded-xl shadow-2xl overflow-hidden hover:shadow-[#00C4CC]/30 transition duration-300 transform hover:scale-[1.02]">
                             <div className="relative block h-48 group cursor-pointer" onClick={() => openCategory(cat.name)}>
@@ -136,13 +154,13 @@ const Gallery = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
 
             {/* FULL SCREEN CATEGORY VIEW */}
             <AnimatePresence>
                 {selectedCategory && (
-                    <CategoryMomentsView 
+                    <CategoryMomentsView
                         selectedCategory={selectedCategory}
                         setSelectedCategory={setSelectedCategory}
                         categoryMoments={categoryMoments}

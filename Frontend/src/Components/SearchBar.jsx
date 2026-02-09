@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useContext } from 'react';
 import DestinationsContext from '../Context/Destinations/DestinationsContext';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const SearchBar = () => {
     const [query, setQuery] = useState(null);
@@ -37,7 +38,12 @@ const SearchBar = () => {
     }
 
     return (
-        <div id="search" className="max-w-[85rem] mx-auto -mt-16 relative z-20 px-4 sm:px-6 lg:px-8">
+        <motion.div 
+            initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            id="search" className="max-w-[85rem] mx-auto -mt-16 relative z-20 px-4 sm:px-6 lg:px-8"
+        >
             <div className="bg-[#1A2437] rounded-2xl shadow-2xl p-6 md:p-8 border-t-8 border-[#00C4CC]">
 
                 <div className="flex flex-col md:flex-row items-stretch md:space-x-4 space-y-4 md:space-y-0 mb-6">
@@ -92,7 +98,7 @@ const SearchBar = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
 
     )
 }
