@@ -74,8 +74,8 @@ const Home = () => {
                 <div className="absolute flex flex-col justify-center items-center w-full text-white bottom-2/5">
                     <motion.h2
                         initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-                                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                                transition={{ type: "spring", stiffness: 100, duration: 0.8 }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ type: "spring", stiffness: 100, duration: 0.8 }}
                         className="text-3xl md:text-4xl lg:text-5xl font-black mb-3"
                     >
                         Discover the World with <span className="block text-center text-[#359ec8]">Absolute Precision.</span>
