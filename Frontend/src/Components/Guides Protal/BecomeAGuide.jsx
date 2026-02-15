@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from "motion/react";
-import heroGuide from '../Images/guide_photo.avif';
+import heroGuide from '../Images/guide_Photo.avif';
 import GuidesStories from './GuidesStories';
 import WorkSteps from './WorkSteps';
 import HelpAndSupports from './HelpAndSupports';
