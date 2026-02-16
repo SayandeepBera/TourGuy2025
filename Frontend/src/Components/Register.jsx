@@ -86,7 +86,9 @@ const Register = (props) => {
       <div className="info-text register text-white">
         <div className="transform -translate-y-22.5 pr-7.5">
           <h2 className="animation uppercase font-bold text-[32px]" style={{ "--i": 17, "--j": 0 }}>Welcome Back</h2>
-          <p className="animation text-[1.03rem]" style={{ "--i": 18, "--j": 1 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tenetur dolore vel obcaecati quos.</p>
+          <p className="animation text-[1.03rem]" style={{ "--i": 18, "--j": 1 }}>Discover unique destinations, connect with trusted local guides, and
+            experience travel like never before. Your next unforgettable journey
+            starts here with TourGuy.</p>
         </div>
         <div className="transform -translate-y-16.5 flex flex-col items-center pr-22.5" >
           <p className="animation text-[1.03rem] mb-2" style={{ "--i": 19, "--j": 2 }}>Already have an account?</p>

@@ -20,7 +20,7 @@ const Login = (props) => {
     // Check for session expiry message in URL
     useEffect(() => {
         const params = new URLSearchParams(location.search);
-        if(params.get('message') === 'session_expired'){
+        if (params.get('message') === 'session_expired') {
             toast.warn("Session expired. Please log in again to continue.", {
                 theme: "colored",
                 toastId: "session-expiry-toast" // Prevent duplicate toasts
@@ -57,7 +57,7 @@ const Login = (props) => {
     }
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
 
         // Prevent spaces in username
         if (name === "loginIdentifier" && value.includes(" ")) return;
@@ -156,7 +156,9 @@ const Login = (props) => {
             <div className="info-text login text-white">
                 <div className="pl-5 transform -translate-y-22.5">
                     <h2 className="animation uppercase font-bold text-[32px]" style={{ "--i": 0, "--j": 20 }}>Welcome Back</h2>
-                    <p className="animation text-[1.03rem]" style={{ "--i": 1, "--j": 21 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tenetur dolore vel obcaecati quos.</p>
+                    <p className="animation text-[1.03rem]" style={{ "--i": 1, "--j": 21 }}>Discover unique destinations, connect with trusted local guides, and
+                        experience travel like never before. Your next unforgettable journey
+                        starts here with TourGuy.</p>
                 </div>
                 <div className="transform -translate-y-16.5 flex flex-col items-center pl-25">
                     <p className="animation text-[1.03rem] mb-2" style={{ "--i": 2, "--j": 22 }}>Don't have an account?</p>
