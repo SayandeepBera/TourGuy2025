@@ -114,7 +114,7 @@ const ForgotPassword = ({ isVisible, onClose }) => {
                             <MdEmail />
                         </div>
                         <button type="submit" disabled={isLoading} className="form-btn w-full mt-3 cursor-pointer">
-                            {isLoading ? <span className="flex items-center justify-center gap-2"><ImSpinner9 className="animate-spin mx-auto" /> Sending... </span> : "Send OTP"}
+                            {isLoading ? <span className="flex items-center justify-center gap-2"><ImSpinner9 className="animate-spin" /> Sending... </span> : "Send OTP"}
                         </button>
                     </form>
                 )}
@@ -148,7 +148,7 @@ const ForgotPassword = ({ isVisible, onClose }) => {
                             <label className="form-label z-0!">Confirm Password</label>
                         </div>
                         <button type="submit" disabled={isLoading} className="form-btn w-full mt-3 cursor-pointer">
-                            {isLoading ? <span className="flex items-center justify-center gap-2"><ImSpinner9 className="animate-spin mx-auto" /> Reseting... </span> : "Reset Password"}
+                            {isLoading ? <span className="flex items-center justify-center gap-2"><ImSpinner9 className="animate-spin" /> Reseting... </span> : "Reset Password"}
                         </button>
                     </form>
                 )}
