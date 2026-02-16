@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, matchRoutes } from 'react-router-dom';
 import Footer from './Footer';
 import { useContext } from 'react';
 import AuthContext from '../Context/Authentication/AuthContext';
@@ -12,16 +12,44 @@ const Layout = ({ children }) => {
   const isAdmin = userRole === "admin";
 
   // Define routes where the footer should be hidden
-  const isAuthPages = location.pathname === '/login' ||
-                      location.pathname === '/profile' ||
-                      location.pathname === '/editprofile' ||
-                      location.pathname === '/register' ||
-                      location.pathname === '/bookinghistory' ||
-                      location.pathname.startsWith('/booking-details/') ||
-                      location.pathname.startsWith('/upload-moment/') ||
-                      location.pathname === '*';
+  const routes = [
+    { path: "/" },
+    { path: "/destination" },
+    { path: "/whyus" },
+    { path: "/guides" },
+    { path: "/support" },
+    { path: "/booking" },
+    { path: "/login" },
+    { path: "/reset-password/:token" },
+    { path: "/profile" },
+    { path: "/editprofile" },
+    { path: "/bookinghistory" },
+    { path: "/booking-details/:id" },
+    { path: "/upload-moment/:bookingId" },
+    { path: "/chat/:conversationId" }
+  ];
 
-  const hideFooter = isAuthPages || isAdmin;
+  // Check if the current route matches any of the defined routes
+  const matchedRoute = matchRoutes(routes, location);
+
+  const isNotFound = !matchedRoute;
+
+  // Routes where footer should be hidden
+  const hideFooterRoutes = [
+    "/login",
+    "/register",
+    "/profile",
+    "/editprofile",
+    "/bookinghistory",
+  ];
+
+  // Hide footer for admin, 404 page, and specific routes
+  const hideFooter =
+    isAdmin ||
+    isNotFound ||
+    hideFooterRoutes.includes(location.pathname) ||
+    location.pathname.startsWith("/booking-details/") ||
+    location.pathname.startsWith("/upload-moment/");
 
   return (
     <>
