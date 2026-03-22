@@ -34,7 +34,7 @@ const deleteGuideFiles = async (profile) => {
 // ---- Guide validation ----
 const guidesRegistrationValidator = [
     body("username", "Username is required").notEmpty().trim(),
-    body("email", "Valid email is required").isEmail().normalizeEmail(),
+    body("email", "Valid email is required").isEmail().normalizeEmail({ gmail_remove_dots: false }),
     body("password", "Password must be at least 6 characters").isLength({ min: 6 }),
     body("fullName", "Full name is required").notEmpty().trim(),
     body("countryCode", "Country code is required").notEmpty(),

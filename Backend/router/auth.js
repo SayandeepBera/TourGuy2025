@@ -7,6 +7,7 @@ import { oAuth2Client } from "../Utils/googleConfig.js";
 import axios from "axios";
 import { sendNotificationEmail } from "../Utils/emailService.js";
 import { getOTPTemplate } from "../Utils/emailTemplates.js";
+import validator from "validator";
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.post(
     [
         // validation
         check("username", "Please enter a valid username").notEmpty(),
-        check("email", "Please enter a valid email").isEmail().normalizeEmail(),
+        check("email", "Please enter a valid email").isEmail().normalizeEmail({ gmail_remove_dots: false }),
         check("password", "Please enter a valid password").isLength({ min: 6 }),
     ],
     async (req, res) => {
@@ -118,7 +119,7 @@ router.post(
 
         try {
             // Convert username or email to lowercase
-            const sanitizedIdentifier = loginIdentifier.toLowerCase();
+            const sanitizedIdentifier = validator.isEmail(loginIdentifier) ? validator.normalizeEmail(loginIdentifier, { gmail_remove_dots: false }).toLowerCase() : loginIdentifier.toLowerCase();
 
             // Find user by either username OR email (after converting to lowercase)
             const existUser = await User.findOne({
@@ -173,7 +174,7 @@ router.post(
     "/forgot-password",
     [
         // Validaton
-        check("email", "Please enter a valid email").isEmail().normalizeEmail(),
+        check("email", "Please enter a valid email").isEmail().normalizeEmail({ gmail_remove_dots: false }),
     ],
     async (req, res) => {
         const error = validationResult(req);
