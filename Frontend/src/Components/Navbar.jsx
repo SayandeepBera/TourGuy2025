@@ -87,6 +87,9 @@ const Navbar = () => {
   // Smooth scroll to Top Destinations section
   const scrollToTopDestinations = (e) => {
     e.preventDefault();
+
+    navigate('/');
+    
     const element = document.getElementById("top-destinations");
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
