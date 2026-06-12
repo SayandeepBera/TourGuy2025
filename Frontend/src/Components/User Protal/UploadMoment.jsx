@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LuUpload, LuImage, LuX, LuMapPin } from "react-icons/lu";
 import { ImSpinner9 } from "react-icons/im";
@@ -20,7 +20,7 @@ const UploadMomentModal = ({ isOpen, onClose, booking }) => {
         if (!image) return toast.error("Please select an image!");
 
         // Check if the file type starts with 'image/'
-        if(!image.type.startsWith("image/")) {
+        if (!image.type.startsWith("image/")) {
             return toast.error("Please upload a valid image file (JPG, PNG, WebP ...).");
         }
 
@@ -36,6 +36,15 @@ const UploadMomentModal = ({ isOpen, onClose, booking }) => {
             toast.error(res.msg);
         }
     };
+
+    // Cleanup blob URL when component unmounts or preview changes
+    useEffect(() => {
+        // Revoke previous blob URL to prevent memory leaks
+        if (preview) {
+            URL.revokeObjectURL(preview);
+        }
+
+    }, [preview]);
 
     return (
         <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 mt-15 bg-black/20 backdrop-blur-md">
@@ -64,17 +73,20 @@ const UploadMomentModal = ({ isOpen, onClose, booking }) => {
                                 <p className="text-xs text-gray-500 font-black uppercase">Select Tour Photo</p>
                             </div>
                         )}
-                        <input type="file" required accept="image/*" className="absolute inset-0 opacity-0 cursor-pointer z-20" 
+                        <input type="file" required accept="image/*" className="absolute inset-0 opacity-0 cursor-pointer z-20"
                             onChange={(e) => {
-                                if(e.target.files[0]) {
+                                if (e.target.files[0]) {
+                                    // Revoke previous blob URL to prevent memory leaks
+                                    if (preview) URL.revokeObjectURL(preview);
+
                                     setImage(e.target.files[0]);
                                     setPreview(URL.createObjectURL(e.target.files[0]));
                                 }
-                            }} 
+                            }}
                         />
                     </div>
 
-                    <textarea 
+                    <textarea
                         placeholder="Write a cinematic caption..."
                         className="w-full bg-black/30 border border-white/5 rounded-2xl p-4 outline-none focus:border-[#00C4CC] h-24 text-sm text-white"
                         value={caption}

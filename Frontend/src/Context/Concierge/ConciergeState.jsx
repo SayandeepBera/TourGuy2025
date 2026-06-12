@@ -10,7 +10,6 @@ const ConciergeState = (props) => {
     const createConciergeRequest = async ({name, email, message}) => {
         try {
             const response = await CreateConciergeRequest(name, email, message);
-            console.log(response);
 
             if (response.success) {
                 return { success : true, message: "Request submitted successfully!", newRequest : response.newRequest };
@@ -27,7 +26,6 @@ const ConciergeState = (props) => {
     const getAllConciergeRequests = async () => {
         try {
             const response = await GetAllConciergeRequests();
-            console.log(response);
 
             if (response.success) {
                 // Update total concierge requests
@@ -51,8 +49,7 @@ const ConciergeState = (props) => {
     const updateConciergeRequestStatus = async (requestId, status) => {
         try {
             const response = await UpdateConciergeRequestStatus(requestId, status);
-            console.log(response);
-
+            
             if (response.success) {
                 return { success : true, updateRequest : response.updateRequest };
             }else{
