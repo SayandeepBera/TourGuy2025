@@ -11,6 +11,7 @@ import AuthContext from '../Context/Authentication/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import ChatContext from '../Context/Chat/ChatContext';
 import Chat from './Chat';
+import { toast } from 'react-toastify';
 
 const Support = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -41,6 +42,12 @@ const Support = () => {
             const adminId =  import.meta.env.VITE_SUPPORT_ADMIN_ID;
 
             console.log("Admin Id: ", adminId);
+
+            if (!adminId) {
+                console.error("Support admin ID not configured");
+                toast.error("Live chat is temporarily unavailable. Please try email support.");
+                return;
+            }
 
             // Create a new conversation
             const response = await createNewConversation(adminId);

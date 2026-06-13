@@ -10,7 +10,7 @@ const TopDestinations = () => {
 
     useEffect(() => {
         fetchDestinations();
-    }, []);
+    }, [fetchDestinations]);
 
     // Sort by Rating (High to Low) and take the top 4
     const topTour = [...destinations]
