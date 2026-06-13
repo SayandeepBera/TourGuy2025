@@ -130,7 +130,7 @@ const BookingSlide3 = ({ formData, setFormData, destination }) => {
                 {/* Upload Document */}
                 <div className="space-y-1">
                     <label className="text-xs font-bold text-[#00C4CC] uppercase ml-1 tracking-wider">Verification Document (ID Proof)</label>
-                    <div className={`relative border-2 border-dashed p-8 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 ${formData.document?.url ? 'border-green-500 bg-green-500/5' : 'border-gray-700 hover:border-[#00C4CC] hover:bg-[#00C4CC]/5'}`}>
+                    <div className={`relative border-2 border-dashed p-8 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 ${formData.document ? 'border-green-500 bg-green-500/5' : 'border-gray-700 hover:border-[#00C4CC] hover:bg-[#00C4CC]/5'}`}>
                         {formData.document ? (
                             <>
                                 <FaCheckCircle className="text-green-500 mb-2" size={35} />

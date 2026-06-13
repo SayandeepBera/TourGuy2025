@@ -69,7 +69,7 @@ const ManualGuideSelection = ({ approvedGuides, formData, setFormData, setViewin
                                         className={`relative w-24 h-24 rounded-full cursor-pointer transition-all duration-500 ${isSelected ? 'scale-125 z-10' : 'scale-100 opacity-60 hover:opacity-100'}`}
                                     >
                                         <div className={`w-full h-full rounded-full overflow-hidden border-4 ${isSelected ? 'border-[#00C4CC] shadow-xl shadow-[#00C4CC]/40' : 'border-gray-700'}`}>
-                                            <img src={guide.profilePhoto.url} alt={guide.fullName} className="w-full h-full object-cover" />
+                                            <img src={guide.profilePhoto?.url} alt={guide.fullName} className="w-full h-full object-cover" />
                                         </div>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); setViewingGuide(guide); }}

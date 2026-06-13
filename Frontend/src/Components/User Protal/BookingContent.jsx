@@ -47,7 +47,7 @@ const BookingContent = ({ filteredBookings, onShareClick }) => {
                     <div className="w-full md:w-48 h-40 md:h-32 rounded-[1.5rem] md:rounded-3xl overflow-hidden shrink-0 bg-gray-800 relative">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <img
-                            src={trip.destinationId?.placeImage.url}
+                            src={trip.destinationId?.placeImage?.url}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                             alt="destination"
                         />
