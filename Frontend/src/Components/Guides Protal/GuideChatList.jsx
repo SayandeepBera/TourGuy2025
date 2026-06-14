@@ -24,7 +24,7 @@ const GuideChatList = ({ onBack }) => {
     // Filter conversations based on search
     const filteredConversations = conversations.filter(chat => {
         const otherParticipant = chat.participants.find(p => p._id !== userId);
-        return otherParticipant?.username.toLowerCase().includes(searchQuery.toLowerCase());
+        return otherParticipant?.username?.toLowerCase().includes(searchQuery.toLowerCase());
     });
 
     return (

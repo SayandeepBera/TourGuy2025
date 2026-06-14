@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const SearchBar = () => {
-    const [query, setQuery] = useState(null);
+    const [query, setQuery] = useState('');
     const { setSelectedCategory, selectedType,setSelectedType, setSearchQuery } = useContext(DestinationsContext);
     const navigate = useNavigate();
 
