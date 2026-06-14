@@ -85,7 +85,7 @@ const FormSlide2 = ({ setFormStep, formData, setFormData }) => {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-xs font-black text-[#00C4CC] uppercase tracking-[0.2em] ml-1">Biography & Experiences (minimum 20 words)</label>
+                    <label className="text-xs font-black text-[#00C4CC] uppercase tracking-[0.2em] ml-1">Biography & Experiences (minimum 20 characters)</label>
                     <div className="relative group">
                         <Briefcase className="absolute left-5 top-5 text-gray-500 group-focus-within:text-[#00C4CC] transition-colors" size={20} />
                         <textarea

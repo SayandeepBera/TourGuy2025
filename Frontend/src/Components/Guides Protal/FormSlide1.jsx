@@ -41,7 +41,6 @@ const FormSlide1 = ({ setFormStep, formData, setFormData }) => {
     const handleContinue = () => {
         // Age validation with Toast
         if (Number(formData.age) < 18) {
-            console.log(formData.age);
             return toast.warning("Minimum age requirement is 18 years.", {
                 position: "top-center",
                 theme: "colored"
