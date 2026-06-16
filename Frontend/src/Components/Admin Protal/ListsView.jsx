@@ -32,7 +32,7 @@ const ListsView = ({ title, statusColor, activeView, setActiveView, setSelectedG
         return currentList.filter(guide =>
             guide.fullName.toLowerCase().includes(searchTerm.toLowerCase())
         );
-    }, [activeView, searchTerm, pendingGuides, approvedGuides, todayPendingGuides]);
+    }, [activeView, searchTerm, pendingGuides, approvedGuides, todayPendingGuides, activeGuides]);
 
     // Total Pages
     const totalPages = Math.ceil(filteredList.length / itemsPerPage);

@@ -35,7 +35,7 @@ const Guide = () => {
                         </motion.p>
                     </div>
                     <div className="lg:w-1/3 flex justify-center lg:justify-end">
-                        <button type="button" className="font-bold text-lg lg:text-xl rounded-full px-6 py-3 md:px-8 lg:px-10 lg:py-4 cursor-pointer bg-[#00C4CC] text-[#121827] shadow-lg shadow-[#00C4CC]/50 hover:bg-cyan-400 transition duration-150 transform hover:scale-105" onClick={handleGuidePortal}>Guide Registration protal<span className="ml-1 text-base">&rarr;</span></button>
+                        <button type="button" className="font-bold text-lg lg:text-xl rounded-full px-6 py-3 md:px-8 lg:px-10 lg:py-4 cursor-pointer bg-[#00C4CC] text-[#121827] shadow-lg shadow-[#00C4CC]/50 hover:bg-cyan-400 transition duration-150 transform hover:scale-105" onClick={handleGuidePortal}>Guide Registration portal<span className="ml-1 text-base">&rarr;</span></button>
                     </div>
                 </div>
 
