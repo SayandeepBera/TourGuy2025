@@ -91,7 +91,7 @@ const FAQ = ({ searchQuery, activeTab, setActiveTab }) => {
             faq.q.toLowerCase().includes(searchQuery.toLowerCase()) ||
             faq.a.toLowerCase().includes(searchQuery.toLowerCase())
         );
-    }, [searchQuery, activeTab]);
+    }, [searchQuery, activeTab, userRole, currentFaqs]);
 
     return (
         <div className="py-20 px-6 max-w-5xl mx-auto">

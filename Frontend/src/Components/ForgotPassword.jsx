@@ -36,7 +36,7 @@ const ForgotPassword = ({ isVisible, onClose }) => {
         e.preventDefault();
 
         // Check OTP length
-        if (otp.length !== 6) {
+        if (otp.length !== 6 || !/^\d{6}$/.test(otp)) {
             return setMessage({ text: "Enter valid 6-digit OTP", isSuccess: false });
         }
 
