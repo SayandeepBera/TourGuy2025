@@ -281,7 +281,7 @@ const EditDestination = ({ destination, onClose }) => {
                             />
 
                             {/* Only allow removal if there is more than one highlight */}
-                            {index > 0 && (
+                            {keyHighlights.length > 1 && (
                                 <button
                                     type="button"
                                     onClick={() => removeHighlight(index)}

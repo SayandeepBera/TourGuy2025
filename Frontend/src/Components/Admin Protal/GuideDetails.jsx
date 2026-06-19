@@ -158,7 +158,7 @@ const GuideDetails = ({ selectedGuide, onBack, onVerify, refreshData }) => {
                                     </span>
                                 ) : (
                                     <>
-                                        <FaCheck /> "Approve Guide"
+                                        <FaCheck /> Approve Guide
                                     </>
                                 )}
 
@@ -195,7 +195,7 @@ const GuideDetails = ({ selectedGuide, onBack, onVerify, refreshData }) => {
                                 </span>
                             ) : (
                                 <>
-                                    <FaTimes /> "Delete Account"
+                                    <FaTimes /> Delete Account
                                 </>
                             )}
                         </button>
