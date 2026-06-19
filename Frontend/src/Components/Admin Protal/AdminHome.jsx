@@ -41,7 +41,7 @@ const AdminHome = () => {
     }, []);
 
     // Top 3 pending guides (First Come First Serve - Oldest First)
-    const urgentRequests = [...pendingGuides]
+    const urgentRequests = [...(pendingGuides || [])]
         .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
         .slice(0, 3);
 

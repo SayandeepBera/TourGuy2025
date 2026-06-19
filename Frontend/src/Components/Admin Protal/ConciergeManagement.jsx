@@ -22,7 +22,7 @@ const ConciergeManagement = ({ onBack }) => {
     // Fetch requests on component mount
     useEffect(() => {
         fetchRequests();
-    }, []);
+    }, [getAllConciergeRequests]);
 
     // Handle status update
     const handleStatusUpdate = async (id, newStatus) => {

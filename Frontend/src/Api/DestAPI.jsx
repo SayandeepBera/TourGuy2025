@@ -35,7 +35,6 @@ export const AddDestination = async (destinationData) => {
     try {
         const response = await api.post('/adddestinations', destinationData);
 
-        console.log("Token used in AddDestination API call:", localStorage.getItem('authToken'));
         return response.data;
     } catch (error) {
         return { success : false, error : error.response?.data?.error || "Failed to add destination due to a server error." };
