@@ -8,7 +8,7 @@ const fetchUser = (req, res, next) => {
 
     // If no token, return error
     if(!token) {
-        res.status(401).json({error: "No token, authorization denied"});
+        return res.status(401).json({error: "No token, authorization denied"});
     }
 
     try {

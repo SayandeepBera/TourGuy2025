@@ -50,7 +50,7 @@ const Login = (props) => {
 
             navigate('/');
         } else {
-            toast.error(loginResult.msg || "Invalide credentials. Please try again.", {
+            toast.error(loginResult.msg || "Invalid credentials. Please try again.", {
                 theme: "colored"
             })
         }
