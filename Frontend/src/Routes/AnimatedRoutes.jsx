@@ -24,7 +24,7 @@ import Chat from "../Components/Chat";
 // GOOGLE AUTH WRAPPER 
 
 const GoogleAuthWrapper = () => (
-    <GoogleOAuthProvider clientId="615688822391-gmsluukitpodifi599eqnlcp9vro7uuv.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
         <LoginRegisterLayout />
     </GoogleOAuthProvider>
 );

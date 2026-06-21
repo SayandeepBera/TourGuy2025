@@ -160,7 +160,7 @@ const AuthState = (props) => {
             console.log("Google login response: ", result);
 
             if (result.success) {
-                setAuthData(result.authToken, result.role, result.username, result.userId);
+                setAuthData(result.authToken, result.role, result.username, result.userId, result.email);
 
                 return { success: true, msg: "You've successfully logged in with Google. Let's get started!", role: result.role };
             } else {
