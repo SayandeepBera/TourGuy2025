@@ -8,6 +8,7 @@ import CompletionPinModal from './CompletionPinModal';
 import Chat from '../Chat';
 import ChatContext from '../../Context/Chat/ChatContext';
 import AuthContext from '../../Context/Authentication/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const GuideBookingHistory = ({ guideHistory, userId, refreshData }) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -18,6 +19,8 @@ const GuideBookingHistory = ({ guideHistory, userId, refreshData }) => {
 
     const { createNewConversation } = useContext(ChatContext);
     const { authToken } = useContext(AuthContext);
+
+    const navigate = useNavigate();
     
     // Filter Logic
     const filteredHistory = guideHistory.filter(item => {

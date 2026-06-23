@@ -182,7 +182,11 @@ const AuthState = (props) => {
         setUsername(null);
         setEmail(null);
         setUserId(null);
-        localStorage.clear();
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userRole');
+        localStorage.removeItem('username');
+        localStorage.removeItem('email');
+        localStorage.removeItem('userId');
     }
 
     const value = {
