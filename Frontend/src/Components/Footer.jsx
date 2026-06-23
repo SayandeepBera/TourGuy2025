@@ -11,7 +11,6 @@ const Footer = () => {
     const handleTourType = (type) => {
         setSelectedType(type);
 
-        console.log("Footer type: ", type);
         navigate('/destination');
 
         // Scroll to top when switching views

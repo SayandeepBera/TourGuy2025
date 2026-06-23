@@ -13,7 +13,7 @@ import underwaterImg from './Images/g4.jpg';
 import skyImg from './Images/g5.jpeg';
 import waterfallImg from './Images/g6.jpg';
 import CategoryMomentsView from './CategoryMomentsView';
-
+import { BsInfoCircleFill } from 'react-icons/bs';
 
 const Gallery = () => {
     const { getGalleryImagesByCategory, deleteGalleryImage, isLoading } = useContext(GalleryContext);
@@ -58,7 +58,6 @@ const Gallery = () => {
         setSelectedCategory(categoryName);
 
         const res = await getGalleryImagesByCategory(categoryName);
-        console.log("Get Gallery Images By Category Result:", result);
 
         if (res.success) {
             setCategoryMoments(res.result.moments);

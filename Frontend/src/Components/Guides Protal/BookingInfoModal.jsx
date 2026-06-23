@@ -54,7 +54,7 @@ const BookingInfoModal = ({ selectedBooking, setSelectedBooking, getStatusStyle,
                         <div className="p-4 bg-gray-900/50 rounded-2xl border border-gray-800">
                             <p className="text-[10px] text-gray-500 uppercase font-black tracking-tighter">Booking Status</p>
                             <p className={`text-xs font-black mt-1 px-2 py-1 rounded-md inline-block ${getStatusStyle(selectedBooking.bookingStatus)}`}>
-                                {selectedBooking.bookingStatus.replace('_', ' ')}
+                                {selectedBooking.bookingStatus.replaceAll('_', ' ')}
                             </p>
                         </div>
                         <div className="p-4 bg-gray-900/50 rounded-2xl border border-gray-800">
@@ -75,7 +75,7 @@ const BookingInfoModal = ({ selectedBooking, setSelectedBooking, getStatusStyle,
                             <div className="absolute top-0 left-0 w-1 h-full bg-[#00C4CC]"></div>
                             <p className="text-sm text-gray-300 leading-relaxed">
                                 Booking for <span className="text-white font-bold">{selectedBooking.destinationName}</span> has been processed.
-                                The current status is set to <span className="text-[#00C4CC] font-bold uppercase">{selectedBooking.bookingStatus.replace('_', ' ')}</span>.
+                                The current status is set to <span className="text-[#00C4CC] font-bold uppercase">{selectedBooking.bookingStatus.replaceAll('_', ' ')}</span>.
                             </p>
                             <p className="text-[10px] text-gray-500 mt-4 font-bold uppercase tracking-widest">
                                 Last Updated: {new Date(selectedBooking.updatedAt || selectedBooking.createdAt).toLocaleString()}
